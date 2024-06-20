@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Basic styles */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #e6ecf0;
+        }
+
+        header {
+            background-color: #fff;
+            padding: 1rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo i {
+            color: #e1306c;
+            font-size: 2rem;
+        }
+
+        main {
+            padding: 2rem;
+        }
+
+        .register-container {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .register-container h1 {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ccd6dd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .btn {
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-weight: bold;
+        }
+
+        .btn-primary {
+            background-color: #e1306c;
+            color: #fff;
+            border: none;
+            width: 100%;
+            font-size: 1.2rem;
+            padding: 0.75rem;
+        }
+
+        .register-container p {
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .register-container a {
+            color: #e1306c;
+            text-decoration: none;
+        }
+
+        footer {
+            background-color: #fff;
+            color: #657786;
+            text-align: center;
+            padding: 1rem;
+            box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+
+    <main>
+        <div class="register-container">
+            <h1>Create your account</h1>
+            <p><%= error %></p>
+            <form action="/register" method="post">
+                <div class="form-group">
+                    <input type="text" placeholder="Name" required name="username">
+                </div>
+                <div class="form-group">
+                    <input type="email"  placeholder="Email" required name="email">
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="Password" required name="password">
+                </div>
+                <div class="form-group">
+                    <input type="role" placeholder="Role between `admin` or `user`" required name="role" name="role">
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg">Sign up</button>
+            </form>
+            <p>Already have an account? <a href="/login">Log in</a></p>
+        </div>
+    </main>
+</body>
+
+</html>

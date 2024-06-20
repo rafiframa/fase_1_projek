@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Tweet</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #e6ecf0;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+
+        main {
+            padding: 2rem;
+        }
+
+        .add-tweet-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .add-tweet-container h1 {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group textarea,
+        .form-group input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ccd6dd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .btn {
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-weight: bold;
+        }
+
+        .btn-primary {
+            background-color: #e1306c;
+            color: #fff;
+            border: none;
+            width: 100%;
+            font-size: 1.2rem;
+            padding: 0.75rem;
+        }
+    </style>
+<body>
+    <main>
+        <div class="add-tweet-container">
+            <h1>Add Post</h1>
+            <form action="/addTweet" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <textarea id="content" name="content" placeholder="What's happening?" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="image">Upload Image</label>
+                    <input type="file" id="image" name="image" accept="image/*"/>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="hashtags" name="tags" placeholder="Add hashtags (separated by commas)" />
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg">Post</button>
+            </form>
+        </div>
+    </main>
+</body>
+
+</html>
