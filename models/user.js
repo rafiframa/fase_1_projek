@@ -25,7 +25,16 @@ module.exports = (sequelize, DataTypes) => {
   User.init({
     username: DataTypes.STRING,
     email: DataTypes.STRING,
-    password: DataTypes.STRING,
+    password:{
+      type:DataTypes.STRING,
+      validate: {
+        is3OrLonger(value){
+          if(value.length < 3){
+            throw new Error (`Password has to be at least 3 char or longer`)
+          }
+        }
+      }
+    }, 
     role: {
       type: DataTypes.STRING,
       validate: {

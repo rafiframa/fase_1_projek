@@ -48,7 +48,7 @@ class Controller {
             res.redirect(`/login`)
         } catch (err) {
             if (err.name === "SequelizeValidationError") {
-                res.redirect(`/register?error=Choose+role+between+"admin"+or+"user"`)
+                res.redirect(`/register?error=${err.message}"`)
             } else {
                 res.send(err)
             }
