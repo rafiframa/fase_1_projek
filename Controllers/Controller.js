@@ -120,7 +120,7 @@ class Controller {
     static async addTweet(req, res) {
         try {
             if (!req.session.user) {
-                res.redirect(`/login`)
+                res.redirect(`/`)
             }
             else{
             res.render("AddTweet")}
